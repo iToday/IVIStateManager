@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tomwin.tpms"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_SETTINGS"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/detection_mode"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        <activity
+            android:name="com.tomwin.tpms.ui.MainActivity"
+            android:launchMode="singleInstance"
+            android:label="@string/detection_mode" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.tomwin.tpms.TpmsService"></service>
+        
+        <activity android:name="com.tomwin.tpms.ui.SettingActivity"/>
+        <activity android:name="com.tomwin.tpms.ui.PairActivity"/>
+        <activity android:name="com.tomwin.tpms.ui.TransActivity"/>
+    </application>
+
+</manifest>

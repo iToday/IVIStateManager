@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="horizontal"
+    tools:context=".MainActivity" >
+
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+	        android:layout_marginLeft="40dip"
+        >
+        <TextView
+	        android:id="@+id/tv_reset"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/btn_setting_bg"
+	        android:clickable="true"
+	        android:gravity="center"
+	        android:onClick="onClick"
+	        android:text="@string/reset"
+	        android:textColor="#FFF"
+	        android:textSize="21dip" 
+	        android:layout_marginBottom="10dip"
+	        />
+        
+        <TextView
+	        android:id="@+id/tv_transposition"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/btn_setting_bg"
+	        android:clickable="true"
+	        android:gravity="center"
+	        android:onClick="onClick"
+	        android:text="@string/transposition"
+	        android:textColor="#FFF"
+	        android:textSize="21dip" 
+	        android:layout_marginTop="10dip"
+	        />
+    </LinearLayout>
+    
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="30dip" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ico_car" />
+        <Button
+            android:id="@+id/rl_top_left_transposition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_switch_bg" 
+            android:layout_marginTop="50dip"
+            android:onClick="onClick"
+            android:textSize="21sp"
+            />
+        <Button
+            android:id="@+id/rl_top_right_transposition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_switch_bg" 
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dip"
+            android:onClick="onClick"
+            android:textSize="21sp"
+            />
+        <Button
+            android:id="@+id/rl_low_left_transposition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_switch_bg" 
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dip"
+            android:onClick="onClick"
+            android:textSize="21sp"
+            />
+        <Button
+            android:id="@+id/rl_low_right_transposition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_switch_bg"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="50dip"
+            android:onClick="onClick"
+            android:textSize="21sp"
+             />
+    </RelativeLayout>
+
+</LinearLayout>

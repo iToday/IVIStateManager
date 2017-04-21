@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff000000"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/title_bg" >
+
+        <TextView
+            android:id="@+id/tv_title_middle_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/setting"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/tv_title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:text="@string/come_back"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="13.0dip"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip" >
+
+            <RelativeLayout
+                android:id="@+id/rl_emitter_matching"
+                android:layout_width="fill_parent"
+                android:layout_height="47.0dip"
+                android:layout_marginTop="13.0dip"
+                android:background="@drawable/setting_single_selector"
+                android:onClick="onClick" 
+                android:clickable="true"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="14.0dip"
+                    android:text="@string/emitter_matching"
+                    android:textColor="@color/black"
+                    android:textSize="18.0sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_tyre_transposition"
+                android:layout_width="fill_parent"
+                android:layout_height="47.0dip"
+                android:layout_marginTop="13.0dip"
+                android:background="@drawable/setting_single_selector"
+                android:longClickable="true"
+                android:onClick="onClick"
+                 >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="14.0dip"
+                    android:text="@string/tyre_transposition"
+                    android:textColor="@color/black"
+                    android:textSize="18.0sp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17.0dip"
+                android:background="@drawable/g_round_box_bg"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="45.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10.0dip"
+                        android:text="@string/pressure_unit"
+                        android:textColor="@color/black"
+                        android:textSize="18.0sp" />
+
+                    <RadioGroup
+                        android:id="@+id/unit_pressure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="12.0dip"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/unit_pressure_kpa"
+                            style="@style/select_radio"
+                            android:background="@drawable/radio_left_selector"
+                            android:text="@string/pressure_unit_kpa"
+                            android:textColor="#000000" />
+                        <RadioButton
+                            android:id="@+id/unit_pressure_psi"
+                            style="@style/select_radio"
+                            android:background="@drawable/radio_middle_selector"
+                            android:text="@string/pressure_unit_psi"
+                            android:textColor="#000000" />
+
+                        <RadioButton
+                            android:id="@+id/unit_pressure_bar"
+                            style="@style/select_radio"
+                            android:background="@drawable/radio_right_selector"
+                            android:text="@string/pressure_unit_bar"
+                            android:textColor="#000000" />
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <View
+                    style="@style/settings_item_horizontal_devider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="45.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10.0dip"
+                        android:text="@string/temperature_unit"
+                        android:textColor="@color/black"
+                        android:textSize="18.0sp" />
+
+                    <RadioGroup
+                        android:id="@+id/unit_t"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="12.0dip"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/unit_t_c"
+                            style="@style/select_radio"
+                            android:background="@drawable/radio_left_selector"
+                            android:text="@string/temperature_unit_c"
+                            android:textColor="#000000" />
+
+                        <RadioButton
+                            android:id="@+id/unit_t_f"
+                            style="@style/select_radio"
+                            android:background="@drawable/radio_right_selector"
+                            android:text="@string/temperature_unit_f"
+                            android:textColor="#000000" />
+                    </RadioGroup>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17.0dip"
+                android:background="@drawable/g_round_box_bg"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:visibility="gone"
+                    android:layout_height="47.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14.0dip"
+                        android:text="@string/alarm_voice_switch"
+                        android:textColor="@color/black"
+                        android:textSize="18.0sp" />
+
+                    <com.tomwin.tpms.ui.SwitchButton
+                        android:id="@+id/sb_alarm_trun"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <View style="@style/settings_item_horizontal_devider" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="35.0dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14.0dip"
+                            android:text="@string/high_pressure"
+                            android:textColor="@color/black"
+                            android:textSize="18.0sp" />
+
+                        <TextView
+                            android:id="@+id/tv_pressure_up_limit_alarm"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="12.0dip"
+                            android:gravity="right"
+                            android:textColor="@color/text_gray_color_b3b3b3" />
+                    </RelativeLayout>
+
+                    <SeekBar
+                        android:id="@+id/myseekbar_press_up_limit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5.0dip"
+                        android:layout_marginLeft="14.0dip"
+                        android:layout_marginRight="12.0dip"
+                        android:max="55"
+                        android:paddingLeft="10.0dip"
+                        android:paddingRight="10.0dip" />
+
+                    <View style="@style/settings_item_horizontal_devider" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="35.0dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14.0dip"
+                            android:text="@string/low_pressure"
+                            android:textColor="@color/black"
+                            android:textSize="18.0sp" />
+
+                        <TextView
+                            android:id="@+id/tv_pressure_low_limit_alarm"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="12.0dip"
+                            android:gravity="right"
+                            android:textColor="@color/text_gray_color_b3b3b3" />
+                    </RelativeLayout>
+
+                    <SeekBar
+                        android:id="@+id/myseekbar_press_low_limit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5.0dip"
+                        android:layout_marginLeft="14.0dip"
+                        android:layout_marginRight="12.0dip"
+                        android:max="6"
+                        android:paddingLeft="10.0dip"
+                        android:paddingRight="10.0dip" />
+
+                    <View style="@style/settings_item_horizontal_devider" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="35.0dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14.0dip"
+                            android:text="@string/high_temprature"
+                            android:textColor="@color/black"
+                            android:textSize="18.0sp" />
+
+                        <TextView
+                            android:id="@+id/tv_pressure_t_limit_alarm"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="12.0dip"
+                            android:gravity="right"
+                            android:textColor="@color/text_gray_color_b3b3b3" />
+                    </RelativeLayout>
+
+                    <SeekBar
+                        android:id="@+id/myseekbar_press_t_limit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5.0dip"
+                        android:layout_marginLeft="14.0dip"
+                        android:layout_marginRight="12.0dip"
+                        android:max="14"
+                        android:paddingLeft="10.0dip"
+                        android:paddingRight="10.0dip" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <Button
+                        android:id="@+id/btn_initsetting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" 
+                        android:text="@string/restore_the_default_settings"
+                        android:onClick="onClick"
+                        >
+                    </Button>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
