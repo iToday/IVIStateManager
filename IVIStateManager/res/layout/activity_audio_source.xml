@@ -1,0 +1,171 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+     >
+     <TextView 
+         android:id="@+id/tvTip"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/audio_source_tip"
+         android:textSize="30sp"
+         />
+    <GridLayout 
+        android:columnCount="6"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_below="@id/tvTip"
+        >
+        <Button
+        android:id="@+id/btnMainSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:textColor="#ffffff"
+        android:enabled="false"
+        android:text="@string/main_source"
+        />
+        <Button
+        android:id="@+id/btnMainOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/open" />
+        <Button
+        android:id="@+id/btnMainClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/close" />
+          
+        <Button
+        android:id="@+id/btnBTSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:textColor="#ffffff"
+        android:enabled="false"
+        android:text="@string/bt_source" />
+    	        <Button
+        android:id="@+id/btnBtOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/open" />
+    	        <Button
+        android:id="@+id/btnBtClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/close" />
+    	       
+    	<Button
+        android:id="@+id/btnDVDSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:textColor="#ffffff"
+        android:enabled="false"
+        android:text="@string/tv_source" />
+    	<Button
+        android:id="@+id/btnDVDOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/open" />
+    	        
+    	<Button
+        android:id="@+id/btnDVDClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/close" />
+    	
+        <Button
+        android:id="@+id/btnAUXSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:textColor="#ffffff"
+        android:enabled="false"
+        android:text="@string/aux_source" />    
+		<Button
+        android:id="@+id/btnAUXOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/open" />
+		<Button
+        android:id="@+id/btnAUXClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/close" />
+        
+        <Button
+        android:id="@+id/btnRadioSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:textColor="#ffffff"
+        android:enabled="false"
+        android:text="@string/fm_source" />
+        <Button
+        android:id="@+id/btnRadioOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/open" />
+        <Button
+        android:id="@+id/btnRadioClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/close" />
+        
+        <Button
+        android:id="@+id/btnIPODSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:enabled="false"
+        android:textColor="#ffffff"
+        android:text="@string/ipod_source" />
+        <Button
+        android:id="@+id/btnIPodOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/open" />
+        <Button
+        android:id="@+id/btnIPodClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/close" />
+        
+     </GridLayout>  
+
+</RelativeLayout>

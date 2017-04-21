@@ -1,0 +1,244 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+     >
+     <TextView 
+         android:id="@+id/tvTip"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/mode_tip"
+         android:textSize="30sp"
+         />
+    <GridLayout 
+        android:columnCount="6"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_below="@id/tvTip"
+        >
+        <Button
+        android:id="@+id/btnMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:text="@string/mode_main"
+        />
+        <Button
+        android:id="@+id/btnRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/mode_radio" />
+        <Button
+        android:id="@+id/btnTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/mode_tv" />
+                <Button
+        android:id="@+id/btnKtv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        android:text="@string/mode_ktv" />
+                <Button
+        android:id="@+id/btnMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        android:onClick="onClick"
+        android:text="@string/mode_music" />
+                <Button
+        android:id="@+id/btnMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        android:text="@string/mode_movie" />
+                <Button
+        android:id="@+id/btnNavi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:text="@string/mode_navi" />
+    	        <Button
+        android:id="@+id/btnAvin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/mode_avin" />
+    	        <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/mode_back" />
+    	        <Button
+        android:id="@+id/btnBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        android:text="@string/mode_bluetooth" />
+    	        <Button
+        android:id="@+id/btnFrontAvin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        android:onClick="onClick"
+        android:text="@string/mode_front_avin" />
+    	        <Button
+        android:id="@+id/btnDvd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        android:text="@string/mode_dvd" />
+    	        <Button
+        android:id="@+id/btnUSB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:text="@string/mode_usb" />
+    	        <Button
+        android:id="@+id/btnSDCrad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/mode_sdcard" />
+    	        
+    	        <Button
+        android:id="@+id/btnPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/mode_photo" />
+    	<Button
+        android:id="@+id/btnEQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        android:text="@string/mode_eq" />        
+    	<Button
+        android:id="@+id/btnA2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        android:onClick="onClick"
+        android:text="@string/mode_a2dp" />        
+    	<Button
+        android:id="@+id/btnCmmb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        android:text="@string/mode_cmmb" />  
+        <Button
+        android:id="@+id/btnIpod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:text="@string/mode_ipod" />    
+		<Button
+        android:id="@+id/btnVDisc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/mode_vdisc" />
+		<Button
+        android:id="@+id/btnPlugInDvd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/mode_plug_dvd" />
+        <Button
+        android:id="@+id/btnAVM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        android:text="@string/mode_avm" />  
+        <Button
+        android:id="@+id/btnIE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        android:onClick="onClick"
+        android:text="@string/mode_ie" />
+        <Button
+        android:id="@+id/btnWifiSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        android:text="@string/mode_wifi_settings" />
+        <Button
+        android:id="@+id/btnHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:text="@string/mode_help" />
+        <Button
+        android:id="@+id/btnHDMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/mode_hdmi" />
+        <Button
+        android:id="@+id/btnCarSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/mode_car_switch" />
+        <Button
+        android:id="@+id/btnAtv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        android:text="@string/mode_atv" />
+        <Button
+        android:id="@+id/btnOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        android:onClick="onClick"
+        android:text="@string/mode_other" />
+        <Button
+        android:id="@+id/btnDvrMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        android:text="@string/mode_dvr" />
+        <Button
+        android:id="@+id/btnBackCarByKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:text="@string/mode_back_review" />
+     </GridLayout>  
+
+</RelativeLayout>

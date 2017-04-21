@@ -6,11 +6,531 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.itoday.ivi.MainActivity" >
-
+    tools:context="com.itoday.ivi.debug.MainActivity" >
     <TextView
+        android:id="@+id/tvMcuVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        />
+    <GridLayout 
+        android:columnCount="8"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_below="@id/tvMcuVersion"
+        >
+        <Button
+        android:id="@+id/btnMute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_column="0"
+        android:onClick="onClick"
+        />
+     
+        <Button
+        android:id="@+id/btnAudioSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/audio_source_debug" />
+        <Button
+        android:id="@+id/btnRunMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/running_mode_debug" />
+        
+        <Button
+        android:id="@+id/btnNaviGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        android:text="@string/navi_gain_add" />
+	   <TextView
+	        android:id="@+id/btnSourceIPOD"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_column="4"
+	        android:onClick="onClick"
+	         />
+        <Button
+            android:id="@+id/btnNaviGainSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            
+            
+            android:onClick="onClick"
+            android:text="@string/navi_gain_sub" />
+		 <Button
+        android:id="@+id/btnAudioState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="6"
+        android:onClick="onClick"
+        android:text="@string/app_state" />
+         <Button
+        android:id="@+id/btnTunerDebug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="7"
+        android:onClick="onClick"
+        android:text="@string/app_radio" />
+       
+        <Button
+        android:id="@+id/btnInputGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/input_gain_add" />
+        <TextView 
+        android:id="@+id/tvInputGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+		
+        android:layout_column="1"
+            />
+        <Button
+        android:id="@+id/btnInputGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/input_gain_sub" />
+        
+        <Button
+        android:id="@+id/btnSubwGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/subw_add" />
+        <TextView 
+        android:id="@+id/tvSubwGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+		
+        android:layout_column="4"
+            />
+        <Button
+        android:id="@+id/btnSubwGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/subw_sub" />
+        
+         <Button
+        android:id="@+id/btnMainGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/main_gain_add" />
+        <TextView 
+        android:id="@+id/tvMainGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnMainGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/main_gain_sub" />
+        
+        <Button
+        android:id="@+id/btnMixGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/mix_add" />
+        <TextView 
+        android:id="@+id/tvMixGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnMixGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/mix_sub" />
+        
+        
+        
+         <Button
+        android:id="@+id/btnFLnGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/fl_gain_add" />
+        <TextView 
+        android:id="@+id/tvFLGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnFLGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/fl_gain_sub" />
+        
+        <Button
+        android:id="@+id/btnBassQGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/bass_q_add" />
+        <TextView 
+        android:id="@+id/tvBassQGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnBassQGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/bass_q_sub" />
+        
+         <Button
+        android:id="@+id/btnFRnGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/fr_gain_add" />
+        <TextView 
+        android:id="@+id/tvFRGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        
+		
+         />
+        <Button
+        android:id="@+id/btnFRGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/fr_gain_sub" />
+        
+                <Button
+        android:id="@+id/btnMidQGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/mid_q_add" />
+        <TextView 
+        android:id="@+id/tvMidQGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnMidQGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/mid_q_sub" />
+        
+         <Button
+        android:id="@+id/btnRLnGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/rl_gain_add" />
+        <TextView 
+        android:id="@+id/tvRLGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnRLGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/rl_gain_sub" />
+        
+        
+        <Button
+        android:id="@+id/btnTrebQGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/treble_q_add" />
+        <TextView 
+        android:id="@+id/tvTrebQGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnTrebQGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/treble_q_sub" />
+        
+        <Button
+        android:id="@+id/btnRRnGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/rr_gain_add" />
+        <TextView 
+        android:id="@+id/tvRRGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnRRGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/rr_gain_sub" />
+        
+         <Button
+        android:id="@+id/btnBassGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/bass_add" />
+        <TextView 
+        android:id="@+id/tvBassGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnBassGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/bass_sub" />
+        
+                 <Button
+        android:id="@+id/btnMidGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/mid_add" />
+        <TextView 
+        android:id="@+id/tvMidGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnMidGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/mid_sub" />
+        
+        <TextView 
+        android:id="@+id/tvResver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        
+		
+        />        
+
+        <TextView 
+        android:id="@+id/tvACC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        
+		
+        />
+        
+        <TextView 
+        android:id="@+id/tvLAMP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        />  
+        
+        <Button
+        android:id="@+id/btnTrebGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        android:text="@string/treble_add" />
+        <TextView 
+        android:id="@+id/tvTrebGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        />
+        <Button
+        android:id="@+id/btnTrebGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        android:text="@string/treble_sub" />
+        
+ 
+        <Button
+        android:id="@+id/btnLoudnessGainAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:onClick="onClick"
+        android:text="@string/loudness_add" />
+        <TextView 
+        android:id="@+id/tvLoudnessGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="4"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnLoudnessGainsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="5"
+        android:onClick="onClick"
+        
+		
+        android:text="@string/loudness_sub" />
+        
+        <Button
+        android:id="@+id/btnLightLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        
+		
+        android:onClick="onClick"
+        android:text="@string/light_left" />
+        <TextView 
+        android:id="@+id/tvLightColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        
+		
+            />
+        <Button
+        android:id="@+id/btnLightRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:onClick="onClick"
+        android:text="@string/light_right" />
+        
+        
+    </GridLayout>
 
 </RelativeLayout>

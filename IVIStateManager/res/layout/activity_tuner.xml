@@ -1,0 +1,149 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+     >
+     
+    <GridLayout 
+        android:columnCount="5"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_below="@id/tvTip"
+        >
+        <TextView 
+         android:id="@+id/tvBand"
+
+         android:text="@string/band"
+         android:textSize="30sp"
+         android:layout_column="0"
+         />
+       <TextView 
+         android:id="@+id/tvFreq"
+         
+         android:text="@string/freq"
+         android:textSize="30sp"
+         android:layout_column="1"
+         />
+       <TextView 
+         android:id="@+id/tvStereo"
+        
+         android:text="@string/stereo"
+         android:textSize="30sp"
+         android:layout_column="2"
+         />
+        <TextView 
+         android:id="@+id/tvLoc"
+        
+         android:text="@string/loc"
+         android:textSize="30sp"
+         android:layout_column="3"
+         />
+           <TextView 
+         android:id="@+id/tvArea"
+        
+         android:text="@string/radio_area"
+         android:textSize="30sp"
+         android:layout_column="4"
+         />
+                <Button
+        android:id="@+id/btnSeekup"
+        android:layout_gravity="fill" 
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:text="@string/seek_up" />
+                <Button
+        android:id="@+id/btnSeekdown"
+        android:layout_gravity="fill" 
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/seek_down" />
+    	        <Button
+        android:id="@+id/btnScanup"
+        android:layout_gravity="fill" 
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:text="@string/scan_up" />
+    	        <Button
+        android:id="@+id/btnScandown"
+        android:layout_gravity="fill" 
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/scan_down" />
+    	        <Button
+        android:id="@+id/btnScanSave"
+        android:layout_gravity="fill" 
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:text="@string/scan_save" />
+    	        <Button
+        android:id="@+id/btnStereo"
+        android:layout_gravity="fill" 
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/stereo" />
+    	        <Button
+        android:id="@+id/btnLoc"
+        android:layout_gravity="fill" 
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:text="@string/loc" />
+    	 <Button
+        android:id="@+id/btnTaiguo"
+        android:layout_gravity="fill" 
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/taiguo" />
+    	 <Button
+        android:id="@+id/btnRiben"
+        android:layout_column="0"
+        android:layout_gravity="fill" 
+        android:onClick="onClick"
+        android:text="@string/riben" />
+    	        
+    	 <Button
+        android:id="@+id/btnOuzhou"
+        android:layout_column="1"
+        android:layout_gravity="fill" 
+        android:onClick="onClick"
+        android:text="@string/ouzhou" />
+    	<Button
+        android:id="@+id/btnEluosi"
+        android:layout_column="0"
+        android:layout_gravity="fill" 
+        android:onClick="onClick"
+        android:text="@string/eluosi" />        
+    	<Button
+        android:id="@+id/btnBeimeizhou"
+        android:layout_gravity="fill" 
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/beimeizhou" />        
+    	<Button
+        android:id="@+id/btnLadingmeizhou"
+		android:layout_gravity="fill" 
+        android:layout_column="0"
+        android:onClick="onClick"
+        android:text="@string/ladingmeizhou" />  
+        <Button
+        android:id="@+id/btnBand"
+		android:layout_gravity="fill" 
+        android:layout_column="1"
+        android:onClick="onClick"
+        android:text="@string/band" />  
+        
+    	<ListView 
+    	    android:id="@+id/favors"
+    	    android:layout_gravity="fill" 
+    	    android:layout_column="2"
+    	    android:layout_row="1"
+    	    android:layout_columnSpan="3"
+    	    android:layout_rowSpan="8"
+    	    ></ListView>
+      
+     </GridLayout>  
+
+</RelativeLayout>

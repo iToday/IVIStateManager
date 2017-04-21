@@ -1,0 +1,21 @@
+
+# Keep all classes extended from com.android.gallery3d.common.Entry
+# Since we annotate on the fields and use reflection to create SQL
+# according to those field.
+#-dontobfuscat
+
+-keepclasseswithmembernames class * {                                        
+    native <methods>;
+}
+
+-keep class com.itoday.ivi.platform.sofia.Mcu { *; }
+-keep class com.itoday.ivi.tuner.Tuner { *; }
+
+-keep class com.itoday.ivi.platform.sofia.Mcu{
+  	 public <methods>;
+}
+
+-keep class com.itoday.ivi.tuner.Tuner{
+  	 public <methods>;
+}
+
