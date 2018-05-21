@@ -2,7 +2,7 @@
 #ifndef ILOG_H
 #define ILOG_H
 #include <utils/Log.h>
-
+#include <android/log.h>
 #ifdef TAG
 
 #define LOGV(...) __android_log_print(ANDROID_LOG_VERBOSE, TAG, __VA_ARGS__)

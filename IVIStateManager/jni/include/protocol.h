@@ -30,7 +30,7 @@
 
 //控制字定义
 #define CTRL_SYSTEM  		0x0
-#define CTRL_CANBOX		0x1
+//#define CTRL_CANBOX		0x1
 #define CTRL_TIME		0x2
 #define CTRL_VOLUME		0x3
 #define CTRL_KEY		0x4
@@ -41,14 +41,18 @@
 #define CTRL_ACC_STATUS 	0x9
 #define CTRL_TV_POWER		0xa
 #define CTRL_HAND_SHAKE 	0xb
-//#define CTRL_CANBOX     	0xc
+#define CTRL_CANBOX     	0xc
 #define CTRL_UPDATE			0xd
 #define CTRL_GPS_VOLUME 	0xe
 #define CTRL_IPOD_STATUS 	0xf
 #define CTRL_BT_POWER		0x10
 #define CTRL_DVR_POWER		0x11
 #define CTRL_ANT_POWER		0x12
-#define CTRL_EX_AMP		0x13
+#define CTRL_EXT_AMP		0x13
+#define CTRL_CANBOX_MODE  	0x1C
+
+#define DEV_REMOTE_AMP  1
+#define DEV_LOCAL_AMP   2
 
 #define CTRL_MCU_UPGRADE 0xF0
 

@@ -156,7 +156,7 @@ namespace android{
 		if (mMcuServer == NULL)
 			return NAME_NOT_FOUND;
 
-		mMcuServer->asBinder(mMcuServer)->linkToDeath(serverDeath);
+		mMcuServer->asBinder()->linkToDeath(serverDeath);
 
 		mMcuServer->addListener(devListener);
 		mMcuServer->addListener(keyListener);
@@ -173,7 +173,7 @@ namespace android{
 	 int Mcu::close(){
 
  	 	if (mMcuServer != NULL){
- 			mMcuServer->asBinder(mMcuServer)->unlinkToDeath(serverDeath);
+ 			mMcuServer->asBinder()->unlinkToDeath(serverDeath);
  		}
  		
  		LOGE("service is NULL");

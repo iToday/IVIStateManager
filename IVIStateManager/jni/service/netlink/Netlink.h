@@ -12,6 +12,7 @@
 #include <linux/netlink.h>
 #include <linux/socket.h>
 #include <errno.h>
+#include <pthread.h>
 
 namespace android{
 

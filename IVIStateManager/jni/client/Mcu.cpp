@@ -83,7 +83,7 @@ namespace android {
 
 		method_reportVersion = env->GetMethodID(clazz, "onVersion", "(ILjava/lang/String;)V");
 
-		method_reportCanbusInfo = env->GetMethodID(clazz, "onCanBusInfo", "(ILjava/lang/String;)V");
+		method_reportCanbusInfo = env->GetMethodID(clazz, "onCanBusInfo", "(I[B)V");
 		
 		method_reportPower = env->GetMethodID(clazz, "onPower", "(I)V");
 
@@ -219,6 +219,26 @@ namespace android {
 		return mMcu->send(dev, cState, sizeof(cState));
 	}
 
+	jint setExtAMP(JNIEnv* env, jobject obj, jint dev, jint state){
+
+		if (mMcu == NULL) return -1;
+
+		if (dev != DEV_REMOTE_AMP && dev != DEV_LOCAL_AMP) return -1;
+
+		char cState[2];
+
+		if (dev == DEV_REMOTE_AMP){
+			cState[0] = dev;
+			cState[1] = state;
+			mMcu->send(CTRL_FLAG, cState, sizeof(cState));
+		}
+
+		cState[0] = dev;
+		cState[1] = state;
+
+		return mMcu->send(CTRL_EXT_AMP, cState, sizeof(cState));
+	}
+
 	jint setAudioSource(JNIEnv* env, jobject obj, jint source){
 		if (mMcu == NULL)
 			return -1;
@@ -352,6 +372,18 @@ namespace android {
 		cState[2] = mix;
 
 		return mMcu->send(CTRL_VOLUME, cState, sizeof(cState));
+	}
+
+	jint setMix(JNIEnv* env, jobject obj, jint mix){
+
+		if (mMcu == NULL)
+			return -1;
+
+		char cState[2];
+		cState[0] = mix;
+		cState[1] = 0xFF;
+
+		return mMcu->send(CTRL_GPS_VOLUME, cState, sizeof(cState));
 	}
 
 	jint setBassQ(JNIEnv* env, jobject obj, jint bass){
@@ -493,7 +525,24 @@ namespace android {
 		cState[2] = (bitrate >> 8) & 0xff;
 		cState[3] = bitrate & 0xff;
 
-		return mMcu->send(CTRL_CANBOX, cState, sizeof(cState));
+		return mMcu->send(CTRL_CANBOX_MODE, cState, sizeof(cState));
+	}
+
+	jint sendCan(JNIEnv* env, jobject obj, jbyteArray  data){
+
+		jbyte* dataBytes = env->GetByteArrayElements(data, NULL);
+
+		if (dataBytes == NULL) {
+			return -1;
+		}
+
+		jint len = env->GetArrayLength(data);
+
+		mMcu->send(CTRL_CANBOX, (char*)dataBytes, len);
+
+		env->ReleaseByteArrayElements(data, dataBytes, 0);
+
+		return 0;
 	}
 
 	jint startUpgrade(JNIEnv* env, jobject obj, jstring path){
@@ -503,6 +552,8 @@ namespace android {
 
 		memcpy(cpath, str, strlen(str));
 		env->ReleaseStringUTFChars(path, str);
+
+		LOGE("startUpgrade : %s ", cpath);
 
 		return mMcu->startUpgrade(cpath);
 	}
@@ -547,15 +598,16 @@ namespace android {
 	void OnCanbus(const unsigned char * data, int len){
 		JNIEnv* env = AndroidRuntime::getJNIEnv();
 
-		char version[256] = {0};
+		jbyte info[256] = {0};
 
-		memcpy(version, data , len);
+		memcpy(info, data , len);
 
-		jstring jver = env->NewStringUTF(version);
+		jbyteArray array = env->NewByteArray(len);
+		env->SetByteArrayRegion(array, 0, len, info);
 
-		env->CallVoidMethod(mCallbacksObj, method_reportCanbusInfo, 0, jver);
+		env->CallVoidMethod(mCallbacksObj, method_reportCanbusInfo, 0, array);
 
-		env->DeleteLocalRef(jver);
+		env->DeleteLocalRef(array);
 	}
 
 	void OnPower(int on){
@@ -636,9 +688,11 @@ namespace android {
 		{"setMainVolume", "(I)I", (void*)setMainVolume},
 		{"setSpeakerVolume", "(IIII)I", (void*)setSpeakerVolume},
 		{"setMute", "(I)I", (void*)setMute},
+		{"setExtAMP", "(II)I", (void*)setExtAMP},
 		//eq
 		{"setSubwooferGain", "(I)I", (void*)setSubwooferGain},
 		{"setMixGain", "(I)I", (void*)setMixGain},
+		{"setMix", "(I)I", (void*)setMix},
 		{"setBassQ", "(I)I", (void*)setBassQ},
 		{"setMidQ", "(I)I", (void*)setMidQ},
 		{"setTrebleQ", "(I)I", (void*)setTrebleQ},
@@ -652,6 +706,7 @@ namespace android {
 		//canbus
 		{"requestCanInfo", "(I)I", (void*)requestCanInfo},
 		{"setCanMode", "(II)I", (void*)setCanMode},
+		{"sendCan","([B)I",(void*)sendCan},
 		{"open", "()I", (void*)open},
 		{"close", "()I", (void*)close},
 		{"startUpgrade", "(Ljava/lang/String;)I", (void*)startUpgrade},
