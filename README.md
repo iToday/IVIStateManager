@@ -20,4 +20,44 @@
 我们将车机中状态分原子状态和组合状态；原子状态不可分割，组合状态由原子状态组成；</br>
 原子状态包括静音开关状态、触摸屏开关状态、显示屏开关状态；</br>
 组合状态包括电话状态、倒车状态、声控状态、待机状态等；如电话状态时，显示屏打开、触摸打开、声音打开；倒车状态时，显示屏打开、触摸关闭、声音关闭；</br>
+```Java
+private void update() {
+  AtomicState asMute;
+  AtomicState asScreen;
+  AtomicState asTouch;
 
+  synchronized (cstates) {
+    asMute = getTargetState(AtomicState.TYPE_MUTE);
+    asTouch = getTargetState(AtomicState.TYPE_TOUCH);
+    asScreen = getTargetState(AtomicState.TYPE_SCREEN);
+  }
+
+  if (DEBUG)
+    Log.d(TAG, "thread run: mute :" + asMute + "   \n last mute: " + lastMute);
+
+  if (asMute != null && !asMute.equalsState(lastMute)){
+    //设置静音状态,所有声音静音，调用硬件静音
+    mPlatform.setMute(asMute.getState() == AtomicState.ON);
+    lastMute = asMute;
+  }
+
+  if (DEBUG)
+    Log.d(TAG, "thread run: screen :" + asScreen + "   \n last screen: " + lastScreen);
+
+  if (asScreen != null &&  !asScreen.equalsState(lastScreen)){
+
+    //设置屏幕开关
+    mPlatform.setBacklight(asScreen.getState());
+    lastScreen = asScreen;
+  }
+
+  if (asTouch != null && !asTouch.equalsState(lastTouch)){
+
+    if (DEBUG)
+      Log.d(TAG, "thread run: touch :" + asTouch);
+
+    //设置触摸状态
+    mPlatform.setTouch(asTouch.getState());
+    lastTouch = asTouch;
+  }
+}
