@@ -11,6 +11,8 @@
 
 需要设计一种机制统一管理状态的切换及行为，并且各状态下的行为可通过配置文件配置；
 
-
-
+# 车载状态机
+设计车载状态机，解决复杂的状态问题
+下面是状态机核心部分的类图
+![](https://github.com/iToday/Vehicle/blob/master/doc/Overview%20of%20ivi.jpg)
 
